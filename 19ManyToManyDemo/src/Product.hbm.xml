@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.omkar.pojo.Product" table="product">
+		<id name="pid"></id>
+		<property name="pname"></property>
+		<property name="pamount"></property>
+		<set name="cid" table="ordersummary" cascade="all">
+			<key column="pid"></key>
+			<many-to-many class="com.omkar.pojo.Customer" column = "cid"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>
