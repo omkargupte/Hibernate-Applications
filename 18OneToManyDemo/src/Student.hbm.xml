@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.omkar.pojo.Student" table="stud1">
+		<id name="rollno"></id>
+		<property name="sname"></property>
+		<property name="smarks"></property>
+		<set name="cno" cascade="all">
+			<key column="rollno"></key><!-- foreign key column  -->
+			<one-to-many class="com.omkar.pojo.Course"></one-to-many>
+		</set>
+	</class>
+</hibernate-mapping>
